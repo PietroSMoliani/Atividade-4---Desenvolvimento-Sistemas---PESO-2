@@ -15,3 +15,10 @@ def versao():
     versao = "1.1.0"
     return f"App v{versao}"
 
+# -------------------------------------------------------
+# Exercício 3 — Saudação por parâmetro de rota
+@app.route('/saudar/<nome>')
+def saudar(nome):
+    nome_formatado = nome.capitalize()
+    return f"Olá, {nome_formatado}!"
+
