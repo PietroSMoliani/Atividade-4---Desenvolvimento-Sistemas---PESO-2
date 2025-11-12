@@ -42,3 +42,23 @@ def home():
 def pagina():
     return render_template('pagina.html')
 
+# -------------------------------------------------------
+# Exercício 7 — Busca em lista
+@app.route('/buscar/<item>')
+def buscar(item):
+    itens = ["maçã", "banana", "laranja", "uva"]
+    encontrado = False
+
+    for i in itens:
+        if i == item:
+            encontrado = True
+            break
+
+    if encontrado:
+        return f"Item '{item}' encontrado na lista!"
+    else:
+        return f"Item '{item}' não encontrado."
+
+# -------------------------------------------------------
+if __name__ == '__main__':
+    app.run(debug=True)
